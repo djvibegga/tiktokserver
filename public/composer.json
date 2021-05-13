@@ -1,0 +1,14 @@
+{
+    "name": "tiktokapi/server",
+    "description": "Tiktok API server middleware",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Eugeniy Marilev",
+            "email": "eugeniymarilev@gmail.com"
+        }
+    ],
+    "require": {
+        "ssovit/tiktok-api": "^1.3"
+    }
+}

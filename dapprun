@@ -19,9 +19,9 @@ IMAGE_URL=$IMAGE_NAME:$VERSION
 if [ $ENV = "prod" ]; then
     docker run -it -d \
         -p 8081:80 \
-        --mount src=$(pwd)/environments/prod/docker/php/opcache.ini,target=/etc/php7/conf.d/opcache.ini,type=bind \
-        --mount src=$(pwd)/environments/prod/docker/php/logging.ini,target=/etc/php7/conf.d/logging.ini,type=bind \
-        --mount src=$(pwd)/environments/prod/docker/crontab,target=/tmp/crontab,type=bind \
+        --mount src=$(pwd)/environment/prod/docker/php/opcache.ini,target=/etc/php7/conf.d/opcache.ini,type=bind \
+        --mount src=$(pwd)/environment/prod/docker/php/logging.ini,target=/etc/php7/conf.d/logging.ini,type=bind \
+        --mount src=$(pwd)/environment/prod/docker/crontab,target=/tmp/crontab,type=bind \
         --mount src=$(pwd)/public,target=/var/www/html,type=bind \
         $IMAGE_URL
 fi
@@ -33,10 +33,10 @@ if [ $ENV = "dev" ]; then
         -e PHP_XDEBUG_ENABLED=1 \
         -e XDEBUG_CONFIG="remote_host=172.17.0.1;idekey=phpstorm" \
         --network="bridge" \
-        --mount src=$(pwd)/environments/dev/docker/php/xdebug-common.ini,target=/etc/php7/conf.d/xdebug.ini,type=bind \
-        --mount src=$(pwd)/environments/dev/docker/php/opcache.ini,target=/etc/php7/conf.d/opcache.ini,type=bind \
-        --mount src=$(pwd)/environments/prod/docker/php/logging.ini,target=/etc/php7/conf.d/logging.ini,type=bind \
-        --mount src=$(pwd)/environments/prod/docker/crontab,target=/tmp/crontab,type=bind \
+        --mount src=$(pwd)/environment/dev/docker/php/xdebug-common.ini,target=/etc/php7/conf.d/xdebug.ini,type=bind \
+        --mount src=$(pwd)/environment/dev/docker/php/opcache.ini,target=/etc/php7/conf.d/opcache.ini,type=bind \
+        --mount src=$(pwd)/environment/prod/docker/php/logging.ini,target=/etc/php7/conf.d/logging.ini,type=bind \
+        --mount src=$(pwd)/environment/prod/docker/crontab,target=/tmp/crontab,type=bind \
         --mount src=$(pwd)/public,target=/var/www/html,type=bind \
         $IMAGE_URL
 fi

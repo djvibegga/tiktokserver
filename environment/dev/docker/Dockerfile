@@ -14,6 +14,7 @@ RUN apk add \
     php${PHP_VERSION}-zlib \
     php${PHP_VERSION}-curl \
     php${PHP_VERSION}-xml \
+    php${PHP_VERSION}-openssl \
     php${PHP_VERSION}-memcached \
     php${PHP_VERSION}-imagick \
     php${PHP_VERSION}-json \

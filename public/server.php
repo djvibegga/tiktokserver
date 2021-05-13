@@ -1,13 +1,8 @@
 <?php
 
-require_once __DIR__ . '/library/tiktok/lib/TikTok/Helper.php';
-require_once __DIR__ . '/library/tiktok/lib/TikTok/Api.php';
-require_once __DIR__ . '/library/tiktok/lib/TikTok/Download.php';
+require_once __DIR__ . '/vendor/autoload.php';
 
 $api = new Sovit\TikTok\Api();
-// $response = $api->getUserFeed('yujiinm');
-// var_dump($response->items);
-// exit;
 
 // $response = $api->getUserFeed('mamkin_simpotiaga', 1591427805000);
 $response = $api->getVideoByID(6836683604592971013);
