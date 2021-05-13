@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PROJECT=tiktokapi
+PROJECT=tiktokserver
 VERSION=latest
 ENV=dev
 
@@ -22,7 +22,7 @@ if [ $ENV = "prod" ]; then
         --mount src=$(pwd)/environment/prod/docker/php/opcache.ini,target=/etc/php7/conf.d/opcache.ini,type=bind \
         --mount src=$(pwd)/environment/prod/docker/php/logging.ini,target=/etc/php7/conf.d/logging.ini,type=bind \
         --mount src=$(pwd)/environment/prod/docker/crontab,target=/tmp/crontab,type=bind \
-        --mount src=$(pwd)/public,target=/var/www/html,type=bind \
+        --mount src=$(pwd),target=/var/www/html,type=bind \
         $IMAGE_URL
 fi
 
@@ -37,7 +37,7 @@ if [ $ENV = "dev" ]; then
         --mount src=$(pwd)/environment/dev/docker/php/opcache.ini,target=/etc/php7/conf.d/opcache.ini,type=bind \
         --mount src=$(pwd)/environment/prod/docker/php/logging.ini,target=/etc/php7/conf.d/logging.ini,type=bind \
         --mount src=$(pwd)/environment/prod/docker/crontab,target=/tmp/crontab,type=bind \
-        --mount src=$(pwd)/public,target=/var/www/html,type=bind \
+        --mount src=$(pwd),target=/var/www/html,type=bind \
         $IMAGE_URL
 fi
 

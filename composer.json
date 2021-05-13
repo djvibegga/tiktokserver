@@ -8,6 +8,11 @@
             "email": "eugeniymarilev@gmail.com"
         }
     ],
+    "autoload" : {
+        "psr-4" : {
+            "TikTok\\" : "src"
+        }
+    },
     "require": {
         "ssovit/tiktok-api": "^1.3"
     }

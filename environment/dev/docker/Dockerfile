@@ -16,15 +16,14 @@ RUN apk add \
     php${PHP_VERSION}-xml \
     php${PHP_VERSION}-openssl \
     php${PHP_VERSION}-memcached \
-    php${PHP_VERSION}-imagick \
     php${PHP_VERSION}-json \
-    php${PHP_VERSION}-gd \
     php${PHP_VERSION}-mbstring \
     php${PHP_VERSION}-ctype \
     php${PHP_VERSION}-xdebug \
     php${PHP_VERSION}-dom \
     php${PHP_VERSION}-phar \
-    php${PHP_VERSION}-fileinfo
+    php${PHP_VERSION}-fileinfo \
+    php${PHP_VERSION}-sockets
 
 #install memcached
 RUN apk add memcached

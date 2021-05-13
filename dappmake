@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PROJECT=tiktokapi
+PROJECT=tiktokserver
 VERSION=latest
 ENV=dev
 NO_CACHE=

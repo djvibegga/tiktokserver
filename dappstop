@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PROJECT=tiktokapi
+PROJECT=tiktokserver
 ENV=dev
 
 if [ $1 ]; then

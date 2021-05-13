@@ -20,7 +20,7 @@ crontab /tmp/crontab
 mkdir $APP_CACHE_DIR -m 777 -p
 
 #Run background services
-cd $APP_DIR && php server.php $APP_IP_ADDRESS $APP_PORT > logs/server.log 2>&1 &
+cd $APP_DIR && php public/server.php $APP_IP_ADDRESS $APP_PORT > logs/server.log 2>&1 &
 
 while sleep 60; do
   echo "working" > /dev/null
