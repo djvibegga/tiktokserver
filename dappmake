@@ -1,0 +1,25 @@
+#!/bin/bash
+
+PROJECT=tiktokapi
+VERSION=latest
+ENV=dev
+NO_CACHE=
+
+if [ $1 ]; then
+    ENV=$1
+fi
+
+if [ $2 ]; then
+    VERSION=$2
+fi
+
+if [ $3 ]; then
+    if [ $3 = "--rebuild" ]; then
+        NO_CACHE="--no-cache"
+    fi
+fi
+
+IMAGE_NAME=$PROJECT/$ENV
+
+cd environments/$ENV/docker
+docker build $NO_CACHE -t $IMAGE_NAME:$VERSION .

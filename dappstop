@@ -1,0 +1,23 @@
+#!/bin/bash
+
+PROJECT=tiktokapi
+ENV=dev
+
+if [ $1 ]; then
+    ENV=$1
+fi
+
+IMAGE_NAME_TEMPLATE=$PROJECT/$ENV
+
+CONTAINER_ID=$(docker ps | grep "$IMAGE_NAME_TEMPLATE" | awk '{print $1}')
+if [ ! -z $CONTAINER_ID ]; then
+    echo "Found container to be stopped: "$CONTAINER_ID
+    echo "Stopping the container..."
+    docker stop $CONTAINER_ID
+    docker rm -f $CONTAINER_ID
+    echo "The end!"
+else
+    echo "Application is not running!"
+    echo "To run the application locally please execute: ./drunapp dev <version>"
+fi
+
