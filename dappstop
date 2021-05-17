@@ -21,3 +21,4 @@ else
     echo "To run the application locally please execute: ./drunapp dev <version>"
 fi
 
+docker network rm tiktok-api-bridge

@@ -2,7 +2,7 @@
 
 export APP_DIR=/var/www/html
 export APP_CACHE_DIR=$APP_DIR/cache
-export APP_IP_ADDRESS=127.0.0.1
+export APP_IP_ADDRESS=172.50.1.100
 export APP_PORT=80
 
 export MEMCACHED_MEMORY=512M
